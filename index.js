@@ -2,26 +2,47 @@
 class Cliente {
     nome;
     cpf;
-    agencia;
-    saldo;
-    rg;
+
 }
 
-const cliente1 = new Cliente(); 
-const cliente2 = new Cliente(); 
+class ContaCorrente {
+    agencia;
+    saldo = 0;
+
+    sacar(valor){
+        if (this.saldo >= valor) {
+            this.saldo -= valor;
+        } else {
+            console.log(`Olá ${contaCorrenteRicardo.nome}, Saldo indisponivel, teu saldo é de ${contaCorrenteRicardo.saldo}`);
+        }
+
+    }
+}
 
 
+const cliente1 = new Cliente();
 cliente1.nome = "Jean";
 cliente1.cpf = 12345678910;
-cliente1.agencia = 1001;
-cliente1.saldo = 0;
-cliente1.rg = 98765432121;
 
+const cliente2 = new Cliente();
 cliente2.nome = "Alice";
 cliente2.cpf = 12345678911;
-cliente2.agencia = 1001;
-cliente2.saldo = 0;
+
+
+
+const contaCorrenteRicardo = new ContaCorrente();
+contaCorrenteRicardo.saldo;
+contaCorrenteRicardo.agencia = 1001;
+contaCorrenteRicardo.nome = "Jean";
+
+
+console.log(contaCorrenteRicardo.saldo);
+contaCorrenteRicardo.saldo = 100;
+console.log(contaCorrenteRicardo.saldo);
+contaCorrenteRicardo.sacar(200);
+
+
+
 
 console.log(cliente1);
 console.log(cliente2);
-
