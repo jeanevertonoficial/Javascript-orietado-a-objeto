@@ -2,15 +2,26 @@ import {Cliente} from "./Cliente.js";  // importando classes
 import {ContaCorrente} from "./ContaCorrente.js";
 
 
-const cliente1 = new Cliente("Jean", 12345678910);
-
-cliente1.agencia = 122;
-
-
-console.log(`Cpf:${cliente1.cpf} e nome do cliente:${cliente1.nome}`);
-
-
+const cliente1 = new Cliente("Jean", 12345678910); 
 const cliente2 = new Cliente("Alice", 112345848); // nome , cpf
+const cliente3 = new Cliente("Roberta", 23232323);
+
+const conta1 = new ContaCorrente(1001, cliente1); // agencia , id cliente
+const conta2 = new ContaCorrente(1002, cliente2); // agencia , id cliente
+const conta3 = new ContaCorrente(1003, cliente3); // agencia , id cliente
+
+conta1.depositar(1000);
+conta2.depositar(1000);
+conta3.depositar(1000);
+
+
+console.log(`\nnome do cliente: ${cliente1.nome} \nCpf:${cliente1.cpf}\n `);
+console.log(`nome do cliente: ${cliente2.nome} \nCpf:${cliente2.cpf}\n `);
+console.log(`nome do cliente: ${cliente3.nome} \nCpf:${cliente3.cpf}\n `);
+console.log(`Contas: ${ContaCorrente.numeroDeContas}`); // metodo contador 
+
+
+
 
 
 
@@ -23,10 +34,10 @@ const cliente2 = new Cliente("Alice", 112345848); // nome , cpf
 // cliente3.agencia = 124;
 
 
-const contaCorrenteJean = new ContaCorrente(1001, cliente2); // agencia , id cliente
-contaCorrenteJean.depositar(1000);
+// const contaCorrenteJean = new ContaCorrente(1001, cliente2); // agencia , id cliente
+// contaCorrenteJean.depositar(1000);
 
-console.log(cliente2);
+// console.log(cliente2);
 
 //const valorSacado = contaCorrenteJean.sacar(800);
 
