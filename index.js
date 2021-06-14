@@ -1,23 +1,5 @@
-// classe é um molde
-class Cliente {
-    nome;
-    cpf;
-
-}
-
-class ContaCorrente {
-    agencia;
-    saldo = 0;
-
-    sacar(valor){
-        if (this.saldo >= valor) {
-            this.saldo -= valor;
-        } else {
-            console.log(`Olá ${contaCorrenteRicardo.nome}, Saldo indisponivel, teu saldo é de ${contaCorrenteRicardo.saldo}`);
-        }
-
-    }
-}
+import {Cliente} from "./Cliente.js";  // importando classes 
+import {ContaCorrente} from "./ContaCorrente.js";
 
 
 const cliente1 = new Cliente();
@@ -30,19 +12,25 @@ cliente2.cpf = 12345678911;
 
 
 
-const contaCorrenteRicardo = new ContaCorrente();
-contaCorrenteRicardo.saldo;
-contaCorrenteRicardo.agencia = 1001;
-contaCorrenteRicardo.nome = "Jean";
+const contaCorrenteJean = new ContaCorrente();
+contaCorrenteJean.saldo;
+contaCorrenteJean.agencia = 1001;
+contaCorrenteJean.nome = "Jean";
 
 
-console.log(contaCorrenteRicardo.saldo);
-contaCorrenteRicardo.saldo = 100;
-console.log(contaCorrenteRicardo.saldo);
-contaCorrenteRicardo.sacar(200);
+contaCorrenteJean.depositar(1000);
+contaCorrenteJean.depositar(1000);
+contaCorrenteJean.depositar(1000);
 
 
+const valorSacado = contaCorrenteJean.sacar(800);
 
 
-console.log(cliente1);
-console.log(cliente2);
+console.log(valorSacado);
+
+console.log(contaCorrenteJean);
+
+// console.log(`\nConta corrente ${cliente1.nome}`);
+// console.log(`CPF ${cliente1.cpf} \n`);
+// console.log(`Conta corrente ${cliente2.nome}`);
+// console.log(`CPF ${cliente2.cpf}`);
