@@ -5,6 +5,9 @@ export class ContaCorrente {
     agencia;
     _cliente;
 
+    _saldo = 0; // _saldo private ou #saldo para mostrar que este atributo é privado
+
+
     // metodos acessores getter e setter, fazendo a proteção de dados
     set cliente(novoValor) {
         if(novoValor instanceof Cliente){
@@ -18,15 +21,16 @@ export class ContaCorrente {
     }
     
 
-    _saldo = 0; // _saldo private ou #saldo para mostrar que este atributo é privado
-
-
     // fazendo o retorno do saldo 
     get saldo(){
         return this._saldo;
     }
 
-    
+    constructor(agencia, cliente){
+        this.agencia = agencia;
+        this.cliente = cliente;
+    }
+
     // function de sacar
     sacar(valor) {
         if (this._saldo >= valor) {
